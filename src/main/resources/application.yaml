@@ -1,0 +1,48 @@
+# Reference: https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+application.version:                                  0.1
+
+### General Settings ###
+spring:
+  application.name:                                   Kata09
+
+info:
+  version:                                            0.1
+  stage:                                              prod
+
+server:
+  port:                                               10000
+  servlet:
+    application-display-name:                         Kata09
+
+logging:
+  file:                                               kata09.log
+
+app:
+  pricing-rules:
+    -
+      sku:                                                A
+      amount:                                             3
+      price:                                              60
+    -
+      sku:                                                B
+      amount:                                             5
+      price:                                              150
+    -
+      sku:                                                C
+      amount:                                             2
+      price:                                              80
+
+---
+spring:
+  profiles: local
+
+logging:
+  file:
+
+---
+spring:
+  profiles: test
+
+logging:
+  file:
